@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Shell
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Tank
+  - Drone
+  - Projectile
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2141328261
+    locked: 0
+  - name: Vegetation
+    uniqueID: 1649843269
+    locked: 0
+  - name: Gamplay
+    uniqueID: 2981250557
+    locked: 0
+  - name: Tank
+    uniqueID: 2701347041
+    locked: 0
+  - name: Enemy
+    uniqueID: 3253021523
+    locked: 0
