@@ -8,34 +8,42 @@ public class TankFire : MonoBehaviour
     [SerializeField] private IProjectile projectile;
     [SerializeField] private MonoBehaviour projectileComponent;
     [SerializeField] private Transform firePos;
+    [SerializeField] private float cooldownSeconds;
+    
+    private float timer;
 
     private void Start()
     {
-        // 优先用 Inspector 指定的组件；否则自动在本物体上找
         if (projectileComponent != null)
         {
             projectile = projectileComponent as IProjectile;
         }
-        else
-        {
-            projectile = GetComponent<IProjectile>();
-        }
+        
+        timer = cooldownSeconds;
     }
     
 
     private void Update()
     {
+        if (timer < cooldownSeconds)
+        {
+            timer += Time.deltaTime;
+        }
+        print(timer);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameEvents.OnTankFired?.Invoke();
-            
-            print(projectile);
-            
-            if (projectile != null)
+            if(projectile == null) 
+                return;
+
+            if (timer >= cooldownSeconds)
             {
                 projectile.Fire(firePos);
+                GameEvents.OnTankFired?.Invoke();
+
+                timer = 0;
             }
-               
+
+
         }
     }
 }

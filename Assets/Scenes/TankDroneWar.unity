@@ -7343,7 +7343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &856517597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7938,6 +7938,10 @@ PrefabInstance:
     - target: {fileID: 988205689203606450, guid: 65de9452ca9529549a2ce0b24087fa15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888074444472181967, guid: 65de9452ca9529549a2ce0b24087fa15, type: 3}
+      propertyPath: cooldownSeconds
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5888074444472181967, guid: 65de9452ca9529549a2ce0b24087fa15, type: 3}
       propertyPath: projectileComponent
@@ -9215,6 +9219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1390733411098396169, guid: e31fae95122dd8d459e40d1ab0e3e55f, type: 3}
+      propertyPath: cooldownSeconds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1390733411098396169, guid: e31fae95122dd8d459e40d1ab0e3e55f, type: 3}
       propertyPath: projectileComponent
       value: 
@@ -13177,6 +13185,10 @@ PrefabInstance:
     - target: {fileID: 2758706363053183973, guid: b7ef5af63c862094e896c756c6dda4ae, type: 3}
       propertyPath: tankMove
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422269559703187110, guid: b7ef5af63c862094e896c756c6dda4ae, type: 3}
+      propertyPath: cooldownSeconds
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

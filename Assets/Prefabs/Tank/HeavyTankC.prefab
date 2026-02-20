@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileComponent: {fileID: -3373116261058564836, guid: 3a59c2ddcf673d5499782d1d2a71ae0d, type: 3}
   firePos: {fileID: 3785763876999903385}
+  cooldownSeconds: 2.5
 --- !u!114 &2758706363053183973
 MonoBehaviour:
   m_ObjectHideFlags: 0

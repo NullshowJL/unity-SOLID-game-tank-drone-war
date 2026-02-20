@@ -482,8 +482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0765d702be357a14d9289167872a5e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileComponent: {fileID: 2228437935163496052, guid: b1ccf4e4af3ee414399b90cbbc19f1ba, type: 3}
+  projectileComponent: {fileID: -73774480069571893, guid: b1ccf4e4af3ee414399b90cbbc19f1ba, type: 3}
   firePos: {fileID: 7299029549104299979}
+  cooldownSeconds: 2
 --- !u!114 &2260136737917353687
 MonoBehaviour:
   m_ObjectHideFlags: 0
