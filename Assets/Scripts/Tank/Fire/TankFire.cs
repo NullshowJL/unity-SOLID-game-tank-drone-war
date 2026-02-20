@@ -21,7 +21,6 @@ public class TankFire : MonoBehaviour
         
         timer = cooldownSeconds;
     }
-    
 
     private void Update()
     {
@@ -29,7 +28,6 @@ public class TankFire : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        print(timer);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if(projectile == null) 
@@ -42,8 +40,6 @@ public class TankFire : MonoBehaviour
 
                 timer = 0;
             }
-
-
         }
     }
 }
