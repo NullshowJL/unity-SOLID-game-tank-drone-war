@@ -9,7 +9,7 @@ public class TankMoveBase : MonoBehaviour
     [SerializeField] protected GameObject moveObject;
     [SerializeField] protected float speed = 1f;
     
-    private IMoveY imoveY;
+    private IMoveY _imoveY;
     
     [Serializable]
     public struct BorderY
@@ -22,7 +22,7 @@ public class TankMoveBase : MonoBehaviour
 
     private void Start()
     {
-        imoveY = this as IMoveY;
+        _imoveY = this as IMoveY;
     }
 
     private void Update()
@@ -36,7 +36,7 @@ public class TankMoveBase : MonoBehaviour
         
          if(inputValue != 0)
         {
-            imoveY?.MoveY(inputValue);   
+            _imoveY?.MoveY(inputValue);   
             
             Vector3 pos = moveObject.transform.position;
             pos.y = Mathf.Clamp(pos.y + inputValue * speed * Time.deltaTime,borderY.minY, borderY.maxY);
