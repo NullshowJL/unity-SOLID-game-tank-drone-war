@@ -1009,6 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9341ba8b9a76b9144b1354ff76b14ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthMax: 100
   healthProgressBar: {fileID: 3370522808395507808}
   currentTankEngine: {fileID: 5287622959762256679}
 --- !u!61 &982693451256123188

@@ -11,6 +11,12 @@ public class DroneSpawner : MonoBehaviour
     [SerializeField] private float startSpawnTime = 0.5f;
     [SerializeField] private float spawnInterval = 2f;
 
+    [SerializeField] private float initialLightChance = 0.95f;   // 初始 light drone 概率
+    [SerializeField] private float minLightChance = 0.45f;       // 最低概率
+    [SerializeField] private float chanceDropPerMinute = 0.10f;  // 每分钟降低的概率
+
+    private float _gameStartTime;
+    
     private void OnEnable()
     {
         GameEvents.OnGameStarted += StartSpawn;
@@ -25,6 +31,7 @@ public class DroneSpawner : MonoBehaviour
 
     private void StartSpawn()
     {
+        _gameStartTime = Time.time;
         InvokeRepeating(nameof(SpawnDrone), startSpawnTime, spawnInterval);
     }
 
@@ -40,7 +47,16 @@ public class DroneSpawner : MonoBehaviour
         
         // 80%概率生成重型飞机
         // 20%概率生成轻型飞机
-        float lightDroneSpawnChance = 0.8f;
+        // float lightDroneSpawnChance = 0.8f;
+        // GameObject dronePrefab = Random.value <= lightDroneSpawnChance ? dronePrefabs[0] : dronePrefabs[1];
+        // Instantiate(dronePrefab, point.position, point.rotation);
+        
+        float minutesElapsed = (Time.time - _gameStartTime) / 60f;
+        float lightDroneSpawnChance = Mathf.Max(
+            initialLightChance - chanceDropPerMinute * minutesElapsed,
+            minLightChance
+        );
+
         GameObject dronePrefab = Random.value <= lightDroneSpawnChance ? dronePrefabs[0] : dronePrefabs[1];
         Instantiate(dronePrefab, point.position, point.rotation);
     }

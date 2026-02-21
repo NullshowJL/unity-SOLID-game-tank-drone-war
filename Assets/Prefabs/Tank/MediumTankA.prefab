@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileComponent: {fileID: -73774480069571893, guid: b1ccf4e4af3ee414399b90cbbc19f1ba, type: 3}
   firePos: {fileID: 7299029549104299979}
-  cooldownSeconds: 2
+  cooldownSeconds: 1.5
 --- !u!114 &2260136737917353687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9341ba8b9a76b9144b1354ff76b14ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthMax: 150
   healthProgressBar: {fileID: 1839322628072405701}
   currentTankEngine: {fileID: 4069640030376642753}
 --- !u!114 &4069640030376642753

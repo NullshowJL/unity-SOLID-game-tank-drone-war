@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour, IDamageable
 {
-    private float _health = 100f;
+    [SerializeField] private float healthMax = 100f;
+    
+    private float _health;
     [SerializeField] private Image healthProgressBar;
     [SerializeField] private TankEngineBase currentTankEngine;
 
@@ -18,6 +20,11 @@ public class HealthSystem : MonoBehaviour, IDamageable
     private void OnDisable()
     {
         GameEvents.OnGameStarted -= ResetHealth;
+    }
+
+    private void Start()
+    {
+        _health = healthMax;
     }
 
     public void TakeDamage(int damageValue)
@@ -35,13 +42,13 @@ public class HealthSystem : MonoBehaviour, IDamageable
             currentTankEngine.EngineDead();
         }
 
-        float progressBarValue = _health / 100;
+        float progressBarValue = _health / healthMax;
         healthProgressBar.fillAmount = progressBarValue;
     }
 
     private void ResetHealth()
     {
-        _health = 100f;
+        _health = healthMax;
         healthProgressBar.fillAmount = 1;
     }
 }
